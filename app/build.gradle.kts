@@ -10,7 +10,7 @@ android {
         minSdk = 26
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0.1"
+        versionName = "2.0.0"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -21,6 +21,7 @@ android {
     }
 }
 dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("org.osmdroid:osmdroid-android:6.1.18")
-    implementation("com.google.android.gms:play-services-nearby:18.7.0")
 }

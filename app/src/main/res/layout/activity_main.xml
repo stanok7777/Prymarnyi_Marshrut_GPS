@@ -4,14 +4,58 @@
     android:layout_height="match_parent"
     android:background="#121212">
 
-    <!-- Карта навігації -->
+    <!-- Карта -->
     <org.osmdroid.views.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomPanel" />
 
-    <!-- Нижня панель керування -->
+    <!-- Верхня панель (Пошук) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6121212"
+        android:padding="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#333333"
+            android:text="Куди прямуємо?"
+            android:textColor="#AAAAAA"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- Інформаційна панель (Швидкість) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomPanel"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="#D9000000"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="км/год"
+            android:textColor="#4CAF50"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- Нижня панель -->
     <LinearLayout
         android:id="@+id/bottomPanel"
         android:layout_width="match_parent"
@@ -25,26 +69,18 @@
             android:id="@+id/statusText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Сигнал GPS: ЗАГЛУШЕНО (РЕБ)"
+            android:text="СИГНАЛ GPS: ВРАЗЛИВИЙ (МОЖЛИВИЙ РЕБ)"
             android:textColor="#FF5252"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
-            
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Активуйте Stealth Mode для інерціальної навігації"
-            android:textColor="#AAAAAA"
-            android:textSize="14sp" />
 
         <Button
             android:id="@+id/vipButton"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:layout_marginTop="12dp"
             android:backgroundTint="#4CAF50"
-            android:text="ТЕСТУВАТИ STEALTH MODE"
+            android:text="АКТИВУВАТИ STEALTH MODE"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
     </LinearLayout>

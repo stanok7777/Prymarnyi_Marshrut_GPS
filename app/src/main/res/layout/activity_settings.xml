@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0EEF5"> <!-- Колір фону як в BlindDriver -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_revert" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Налаштування"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Блок меню як в BlindDriver -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menu_bg"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Довідка: значки й функції" android:textStyle="bold" android:textColor="#311B92" android:textSize="16sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Що означає кожен значок і як працює ведення без GPS" android:textColor="#4527A0" android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnLogDev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menu_bg"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Надіслати лог розробнику" android:textStyle="bold" android:textColor="#311B92" android:textSize="16sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Останній, обрані або за день; з коментарем і даними про телефон" android:textColor="#4527A0" android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menu_bg"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Аналітика поїздок" android:textStyle="bold" android:textColor="#311B92" android:textSize="16sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Пробіг, час у дорозі й на стоянці, особистий коефіцієнт заторів" android:textColor="#4527A0" android:textSize="14sp"/>
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menu_bg"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Датчики й логи (для досвідчених)" android:textStyle="bold" android:textColor="#311B92" android:textSize="16sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Пороги детектора зупинки, запис і обрізка логів" android:textColor="#4527A0" android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- Блок: Офлайн-пошук адрес -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Офлайн-пошук адрес"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginBottom="8dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Пошук вулиць, будинків, населених пунктів без інтернету за каталогом, зібраним з OpenStreetMap. У сільській місцевості адреси в OSM повні гірше, ніж у містах."
+                android:textColor="#333"
+                android:textSize="14sp" />
+            
+            <Button
+                android:id="@+id/btnDownloadAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#EDE7F6"
+                android:textColor="#311B92"
+                android:text="Завантажити всі області (36,2 МБ)" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Усі області (25, встановлено 2)"
+                android:textColor="#000"
+                android:textStyle="bold" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#FFF"
+                android:padding="12dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="✓ Дніпропетровська область (ви тут)
+версія 2026-09-21, 6.8 МБ"
+                    android:textColor="#000" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Видалити"
+                    android:backgroundTint="#F5F5F5"
+                    android:textColor="#333" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnUpdateCatalogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#EDE7F6"
+                android:textColor="#311B92"
+                android:text="Оновити список каталогів" />
+
+            <!-- Блок: Кешування карти -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Офлайн-карта"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginBottom="8dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Карта береться з інтернету (OpenFreeMap; ключ не потрібен, Mapbox для карти не використовується). Щоб у дорозі без інтернету карта не зникала, її можна зберігати."
+                android:textColor="#333"
+                android:textSize="14sp" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Кешувати карту вздовж маршруту"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Після вибору маршруту підвантажується смуга ±1.2 км уздовж нього (орієнтовно 5-15 МБ на 10 км)."
+                        android:textColor="#555"
+                        android:textSize="13sp" />
+                </LinearLayout>
+                <Switch android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Кешувати мою область"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Тримає завантаженою карту навколо вашого місця."
+                        android:textColor="#555"
+                        android:textSize="13sp" />
+                </LinearLayout>
+                <Switch android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Світлофори, переходи, переїзди"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="База з OpenStreetMap по всій Україні: світлофори, лежачі полісмени, пішохідні переходи й переходи через велодоріжки."
+                android:textColor="#333" />
+                
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomPanel" />
+
+    <!-- Верхня панель (BlindDriver Style) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F0F0F0"
+        android:padding="8dp"
+        android:elevation="4dp">
+        
+        <!-- Пошук та Налаштування -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:background="@android:color/white"
+                android:text="🔍 Куди (адреса, координати)"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:textColor="#333" 
+                android:elevation="2dp"/>
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="#E0E0E0"
+                android:tint="#333"
+                android:src="@android:drawable/ic_menu_preferences" />
+        </LinearLayout>
+
+        <!-- Точки А і Б, Логи -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="A: Моє місце"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333"
+                android:elevation="2dp"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="B: не задано"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333"
+                android:elevation="2dp"/>
+            <Button
+                android:id="@+id/btnRec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFF"
+                android:text="⏺ REC" />
+        </LinearLayout>
+        
+        <!-- Панель статусу GPS (Кольорові індикатори) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="#D32F2F"
+                android:textColor="#FFF"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="GPS ✕"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="#388E3C"
+                android:textColor="#FFF"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="🔊"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="#455A64"
+                android:textColor="#FFF"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="3D"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Нижня панель статусів та Anti-REB -->
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#E6000000"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="СИГНАЛ GPS: ВРАЗЛИВИЙ (МОЖЛИВИЙ РЕБ)"
+            android:textColor="#FF5252"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/stealthButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#4CAF50"
+            android:text="АКТИВУВАТИ ANTI-РЕБ ЗАХИСТ"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#000"
+            android:text="РУШАЙ"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

@@ -5,5 +5,5 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories { google(); mavenCentral() }
 }
-rootProject.name = "Prymarnyi_Marshrut_GPS"
+rootProject.name = "Prymarnyi_Marshrut_Working"
 include(":app")

@@ -4,84 +4,92 @@
     android:layout_height="match_parent"
     android:background="#121212">
 
-    <!-- Карта -->
     <org.osmdroid.views.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomPanel" />
+        android:layout_height="match_parent" />
 
-    <!-- Верхня панель (Пошук) -->
+    <!-- Верхня панель (Куди їдемо, Маршрут А-Б) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E6121212"
-        android:padding="12dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#333333"
-            android:text="Куди прямуємо?"
-            android:textColor="#AAAAAA"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:textSize="16sp"/>
-    </LinearLayout>
-
-    <!-- Інформаційна панель (Швидкість) -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottomPanel"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:background="#D9000000"
-        android:padding="12dp"
         android:orientation="vertical"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
+        android:background="#F0F0F0"
+        android:padding="8dp">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:background="@android:color/white"
+                android:text="🔍 Куди (адреса, координати)"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:textColor="#333" />
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="#4CAF50"
+                android:tint="#FFFFFF"
+                android:src="@android:drawable/ic_menu_preferences" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="км/год"
-            android:textColor="#4CAF50"
-            android:textSize="12sp"/>
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="A: Моє місце"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="B: Вибрати"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333"/>
+            <Button
+                android:id="@+id/btnRec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFF"
+                android:text="⏺ REC" />
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Нижня панель -->
+    <!-- Нижня панель статусів -->
     <LinearLayout
-        android:id="@+id/bottomPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#1E1E1E"
+        android:background="#D9000000"
         android:orientation="vertical"
         android:padding="16dp">
-
         <TextView
-            android:id="@+id/statusText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="СИГНАЛ GPS: ВРАЗЛИВИЙ (МОЖЛИВИЙ РЕБ)"
-            android:textColor="#FF5252"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/vipButton"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#4CAF50"
-            android:text="АКТИВУВАТИ STEALTH MODE"
+            android:text="GPS немає. Позиція лише за вежею зв'язку, ±500 м"
             android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textSize="14sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#4CAF50"
+            android:text="РУШАЙ (АВТО / ПІШКИ)" />
     </LinearLayout>
 </RelativeLayout>
